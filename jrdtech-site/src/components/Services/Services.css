@@ -1,0 +1,67 @@
+.services__grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.services__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.services__card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-4px);
+}
+
+.services__description {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+.services__benefits {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.services__benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+}
+
+.services__check {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-strong);
+}
+
+.services__cta {
+  margin-top: 24px;
+  align-self: flex-start;
+}
+
+@media (min-width: 720px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1180px) {
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .services__card {
+    padding: 26px 22px;
+  }
+}

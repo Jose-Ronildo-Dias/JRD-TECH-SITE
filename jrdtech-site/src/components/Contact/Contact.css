@@ -1,0 +1,118 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.contact__whatsapp {
+  margin-top: 30px;
+}
+
+.contact__details {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact__details dt {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+.contact__details dd {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.contact__details a {
+  color: var(--accent-strong);
+}
+
+.contact__form {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 34px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-content: start;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__field label {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text-primary);
+  transition: border-color 0.2s var(--ease);
+}
+
+.contact__field input:focus,
+.contact__field select:focus,
+.contact__field textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact__field textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.contact__field input[aria-invalid='true'],
+.contact__field select[aria-invalid='true'],
+.contact__field textarea[aria-invalid='true'] {
+  border-color: #e0664f;
+}
+
+.contact__error {
+  font-size: 0.82rem;
+  color: #ff9c85;
+}
+
+.contact__submit {
+  margin-top: 6px;
+}
+
+.contact__status {
+  min-height: 1.2em;
+  font-size: 0.92rem;
+  color: var(--accent-strong);
+}
+
+@media (min-width: 640px) {
+  .contact__field--full {
+    grid-column: 1 / -1;
+  }
+
+  .contact__form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact__submit,
+  .contact__status {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 980px) {
+  .contact__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+  }
+}

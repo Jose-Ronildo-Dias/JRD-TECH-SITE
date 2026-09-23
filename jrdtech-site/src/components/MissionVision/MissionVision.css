@@ -1,0 +1,31 @@
+.mission-vision__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.mission-vision__item {
+  background: var(--bg-alt);
+  padding: 40px clamp(24px, 4vw, 44px);
+}
+
+.mission-vision__item h3 {
+  color: var(--accent-strong);
+}
+
+.mission-vision__item p {
+  margin-top: 14px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  max-width: 46ch;
+}
+
+@media (min-width: 760px) {
+  .mission-vision__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

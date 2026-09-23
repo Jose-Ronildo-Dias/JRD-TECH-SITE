@@ -1,0 +1,96 @@
+.hero {
+  position: relative;
+  padding-top: clamp(64px, 10vw, 104px);
+  padding-bottom: clamp(48px, 8vw, 88px);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 520px;
+  background: radial-gradient(closest-side, rgba(47, 184, 139, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 620px;
+}
+
+.hero__subheadline {
+  margin-top: 22px;
+  font-size: clamp(1.05rem, 0.4vw + 1rem, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+
+.hero__actions {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero__visual {
+  justify-self: center;
+  width: 100%;
+  max-width: 480px;
+}
+
+.hero-graphic {
+  width: 100%;
+  height: auto;
+}
+
+.hg-flow {
+  stroke-dasharray: 6 8;
+  animation: hg-dash 6s linear infinite;
+}
+
+.hg-cursor {
+  animation: hg-blink 1.1s steps(1) infinite;
+}
+
+@keyframes hg-dash {
+  to {
+    stroke-dashoffset: -140;
+  }
+}
+
+@keyframes hg-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hg-flow,
+  .hg-cursor {
+    animation: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 32px;
+  }
+
+  .hero__visual {
+    justify-self: end;
+  }
+}

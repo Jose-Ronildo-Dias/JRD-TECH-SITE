@@ -1,0 +1,31 @@
+.highlights {
+  padding-block: clamp(36px, 5vw, 56px);
+}
+
+.highlights__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.highlights__item {
+  padding-left: 18px;
+  border-left: 2px solid var(--accent-border);
+}
+
+.highlights__item h3 {
+  font-size: 1.15rem;
+}
+
+.highlights__item p {
+  margin-top: 6px;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+}
+
+@media (min-width: 720px) {
+  .highlights__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
